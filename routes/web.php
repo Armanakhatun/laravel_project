@@ -23,3 +23,9 @@ Route::get('/blog','App\Http\Controllers\UserController@blog')->name('blog');
 Route::get('/contact','App\Http\Controllers\UserController@contact')->name('contact');
 Route::get('/price','App\Http\Controllers\UserController@pricing')->name('pricing');
 Route::get('/team','App\Http\Controllers\UserController@team')->name('team');
+Route::get('/portfolio','App\Http\Controllers\UserController@portfolio')->name('portfolio');
+//admin route
+Route::get('/admin/home','App\Http\Controllers\AdminController@index')->name('admin.home');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

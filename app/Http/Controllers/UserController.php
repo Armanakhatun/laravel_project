@@ -35,10 +35,11 @@ class UserController extends Controller
     {
         return view('user.pricing');
     }
-    public function team()
+    public function portfolio()
     {
-        return view('user.team');
+        return view('user.portfolio');
     }
+
 
     /**
      * Show the form for creating a new resource.
