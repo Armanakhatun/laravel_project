@@ -26,6 +26,12 @@ Route::get('/team','App\Http\Controllers\UserController@team')->name('team');
 Route::get('/portfolio','App\Http\Controllers\UserController@portfolio')->name('portfolio');
 //admin route
 Route::get('/admin/home','App\Http\Controllers\AdminController@index')->name('admin.home');
+Route::get('/admin/addcategory','App\Http\Controllers\AdminController@addcategory')->name('admin.addcategory');
+Route::get('/admin/addproduct','App\Http\Controllers\AdminController@addproduct')->name('admin.addproduct');
+
+
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

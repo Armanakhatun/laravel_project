@@ -15,6 +15,18 @@ class AdminController extends Controller
     {
         return view('admin.adminhome');
     }
+    public function __construct()
+    {
+        $this->middleware('auth:web');
+    }
+    public function addcategory()
+    {
+        return view('admin.addcategory');
+    }
+    public function addproduct()
+    {
+        return view('admin.addproduct');
+    }
 
     /**
      * Show the form for creating a new resource.
