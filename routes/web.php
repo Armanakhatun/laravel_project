@@ -27,7 +27,9 @@ Route::get('/portfolio','App\Http\Controllers\UserController@portfolio')->name('
 //admin route
 Route::get('/admin/home','App\Http\Controllers\AdminController@index')->name('admin.home');
 Route::get('/admin/addcategory','App\Http\Controllers\AdminController@addcategory')->name('admin.addcategory');
+Route::post('/admin/storecategory','App\Http\Controllers\AdminController@storecategory')->name('admin.storecategory');
 Route::get('/admin/addproduct','App\Http\Controllers\AdminController@addproduct')->name('admin.addproduct');
+// Route::post('/admin/storecategory','App\Http\Controllers\AdminController@storecategory')->name('admin.storecategory');
 
 
 
