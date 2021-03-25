@@ -20,7 +20,13 @@
               </header>
               <div class="panel-body">
                 <div class="form">
-                  <form class="form-validate form-horizontal " id="register_form" method="post" action="">
+                  @if(Session::has('msg'))
+                  <div class="alert alert-success">
+                    {{Session::get('msg')}}
+                  </div>
+                  @endif
+                  <form class="form-validate form-horizontal " id="register_form" method="post" action="{{route('admin.storeproduct')}}" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group ">
                       <label for="productname" class="control-label col-lg-2">Product name <span class="required">*</span></label>
                       <div class="col-lg-10">
@@ -43,12 +49,12 @@
                       <label for="description" class="control-label col-lg-2">Product description <span class="required">*</span></label>
                       <div class="col-lg-10">
                         <textarea class="form-control" name="description" id="description"></textarea>
-                        <input class="form-control " id="description" name="description"  />
+                        
                       </div>
                     </div>
                     
                     <div class="form-group ">
-                      <label for="description" class="control-label col-lg-2">Product image <span class="required">*</span></label>
+                      <label for="image" class="control-label col-lg-2">Product image <span class="required">*</span></label>
                       <div class="col-lg-10">
                         <input class="form-control " id="image" name="image" type="file" />
                       </div>
