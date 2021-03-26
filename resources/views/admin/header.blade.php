@@ -376,8 +376,10 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="basic_table.html">Basic Table</a></li>
+              <li><a class="" href="{{route('admin.showproduct')}}">Show Product</a></li>
+              <li><a class="" href="{{route('admin.showcategory')}}">Show Category</a></li>
             </ul>
+             
           </li>
 
           <li class="sub-menu">

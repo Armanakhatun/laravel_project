@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class UserController extends Controller
 {
@@ -35,10 +36,13 @@ class UserController extends Controller
     {
         return view('user.pricing');
     }
-    public function portfolio()
+    
+     public function product()
     {
-        return view('user.portfolio');
+        $show=Product::orderBy('id','desc')->get();
+        return view('user.product',['show'=>$show]);
     }
+
 
 
     /**
