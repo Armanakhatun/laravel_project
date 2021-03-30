@@ -42,6 +42,10 @@ class UserController extends Controller
         $show=Product::orderBy('id','desc')->get();
         return view('user.product',['show'=>$show]);
     }
+    public function productdetail($id){
+        $detail=Product::find($id);
+        return view('user.productdetail',compact('detail'));
+    }
 
 
 

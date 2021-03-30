@@ -24,6 +24,12 @@ Route::get('/contact','App\Http\Controllers\UserController@contact')->name('cont
 Route::get('/price','App\Http\Controllers\UserController@pricing')->name('pricing');
 Route::get('/team','App\Http\Controllers\UserController@team')->name('team');
 Route::get('/product','App\Http\Controllers\UserController@product')->name('product');
+Route::get('/productdetail/{id}','App\Http\Controllers\UserController@productdetail')->name('productdetail');
+
+
+
+
+
 //admin route
 Route::get('/admin/home','App\Http\Controllers\AdminController@index')->name('admin.home');
 Route::get('/admin/addcategory','App\Http\Controllers\AdminController@addcategory')->name('admin.addcategory');
