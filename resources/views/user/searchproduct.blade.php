@@ -1,5 +1,5 @@
 @extends('user.layout.master')
-@section('title','Ecommerce-Product')
+@section('title','Ecommerce-Search')
 @section('content-section')
 <style type="text/css">
   .img{
@@ -7,7 +7,8 @@
   }
 </style>
  <main id="main">
-  <section class="mt-5">
+
+   <section class="mt-5">
     <div class="col-md-8 row">
                 <form action="{{route('searchproduct')}}">
                   @csrf
@@ -16,11 +17,15 @@
                 </form>
               </div>
   </section>
- <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio mt-5">
       <div class="container">
+
+        
+
         <div class="row portfolio-container">
-        @foreach($show as $s)
+        @foreach($result as $s)
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="{{asset('admin/upload/products')}}/{{$s->product_image}}" class="img-fluid img" alt="">

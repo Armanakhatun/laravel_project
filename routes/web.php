@@ -25,7 +25,7 @@ Route::get('/price','App\Http\Controllers\UserController@pricing')->name('pricin
 Route::get('/team','App\Http\Controllers\UserController@team')->name('team');
 Route::get('/product','App\Http\Controllers\UserController@product')->name('product');
 Route::get('/productdetail/{id}','App\Http\Controllers\UserController@productdetail')->name('productdetail');
-
+Route::get('/searchresult','App\Http\Controllers\UserController@search')->name('searchproduct');
 
 
 

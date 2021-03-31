@@ -44,7 +44,14 @@ class UserController extends Controller
     }
     public function productdetail($id){
         $detail=Product::find($id);
-        return view('user.productdetail',compact('detail'));
+        $recent=Product::orderBy('id','desc')->limit(5)->get();
+
+        return view('user.productdetail',compact('detail','recent'));
+    }
+    public function search(Request $request){
+        $searchitem=$request->get('search');
+        $result=Product::orderBy('id','desc')->where('product_name','like','%'.$searchitem.'%')->get();
+        return view('user.searchproduct',['result'=>$result]);
     }
 
 
