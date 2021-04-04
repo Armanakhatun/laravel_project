@@ -25,7 +25,7 @@ Route::get('/price','App\Http\Controllers\UserController@pricing')->name('pricin
 Route::get('/team','App\Http\Controllers\UserController@team')->name('team');
 Route::get('/product','App\Http\Controllers\UserController@product')->name('product');
 Route::get('/productdetail/{id}','App\Http\Controllers\UserController@productdetail')->name('productdetail');
-Route::get('/searchresult','App\Http\Controllers\UserController@search')->name('searchproduct');
+Route::get('/searchresultd','App\Http\Controllers\UserController@search')->name('searchproduct');
 
 
 
@@ -38,6 +38,11 @@ Route::get('/admin/addproduct','App\Http\Controllers\AdminController@addproduct'
 Route::post('/admin/storeproduct','App\Http\Controllers\AdminController@storeproduct')->name('admin.storeproduct');
 Route::get('/admin/showproduct','App\Http\Controllers\AdminController@showproduct')->name('admin.showproduct');
 Route::get('/admin/showcategory','App\Http\Controllers\AdminController@showcategory')->name('admin.showcategory');
+Route::get('/admin/editcategory/{id}','App\Http\Controllers\AdminController@editcategory')->name('admin.editcategory');
+Route::post('/admin/updatecategory/{id}','App\Http\Controllers\AdminController@updatecategory')->name('admin.updatecategory');
+Route::get('/admin/deletecategory/{id}','App\Http\Controllers\AdminController@deletecategory')->name('admin.deletecategory');
+
+Route::get('/admin/editproduct/{id}','App\Http\Controllers\AdminController@editproduct')->name('admin.editproduct');
 
 
 

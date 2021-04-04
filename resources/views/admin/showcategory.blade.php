@@ -21,7 +21,11 @@
               <header class="panel-heading">
               	category List Table
               </header>
-
+                  @if(Session::has('msg'))
+                  <div class="alert alert-success">
+                    {{Session::get('msg')}}
+                  </div>
+                  @endif
               <table class="table table-striped table-advance table-hover">
                 <tbody>
                 	
@@ -36,9 +40,8 @@
                     
                     <td>
                       <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                        <a class="btn btn-primary" href="{{route('admin.editcategory',$category->id)}}"><i class="icon_plus_alt2"></i></a>
+                        <a class="btn btn-danger" href="{{route('admin.deletecategory',$category->id)}}" onclick="return confirm('Are u sure to delete this category???')"><i class="icon_close_alt2"></i></a>
                       </div>
                     </td>
                   </tr>
