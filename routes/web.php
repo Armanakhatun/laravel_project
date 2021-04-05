@@ -43,6 +43,8 @@ Route::post('/admin/updatecategory/{id}','App\Http\Controllers\AdminController@u
 Route::get('/admin/deletecategory/{id}','App\Http\Controllers\AdminController@deletecategory')->name('admin.deletecategory');
 
 Route::get('/admin/editproduct/{id}','App\Http\Controllers\AdminController@editproduct')->name('admin.editproduct');
+Route::post('/admin/updateproduct/{id}','App\Http\Controllers\AdminController@updateproduct')->name('admin.updateproduct');
+Route::get('/admin/deleteproduct/{id}','App\Http\Controllers\AdminController@destroyproduct')->name('admin.deleteproduct');
 
 
 
