@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\Customer;
 
 class UserController extends Controller
 {
@@ -45,13 +47,30 @@ class UserController extends Controller
     public function productdetail($id){
         $detail=Product::find($id);
         $recent=Product::orderBy('id','desc')->limit(5)->get();
+        $category=Category::withCount('products')->get();
 
-        return view('user.productdetail',compact('detail','recent'));
+        return view('user.productdetail',compact('detail','recent','category'));
     }
     public function search(Request $request){
         $searchitem=$request->get('search');
         $result=Product::orderBy('id','desc')->where('product_name','like','%'.$searchitem.'%')->get();
         return view('user.searchproduct',['result'=>$result]);
+    }
+    public function productbycategory($id){
+        $category=Category::find($id);
+        return view('user.productbycategory',['category'=>$category]);
+    }
+    public function signupform(){
+        return view('user.signup');
+    }
+    public function storecustomer(Request $request){
+        Customer::create([
+           'name'=>$request->get('name'),
+           'email'=>$request->get('email'),
+           'password'=>bcrypt($request->get('pass'))
+        ]);
+        $request->session()->flash('msg','Account has been created successfully');
+        return redirect()->back();
     }
 
 

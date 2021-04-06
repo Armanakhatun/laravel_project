@@ -25,8 +25,10 @@ Route::get('/price','App\Http\Controllers\UserController@pricing')->name('pricin
 Route::get('/team','App\Http\Controllers\UserController@team')->name('team');
 Route::get('/product','App\Http\Controllers\UserController@product')->name('product');
 Route::get('/productdetail/{id}','App\Http\Controllers\UserController@productdetail')->name('productdetail');
-Route::get('/searchresultd','App\Http\Controllers\UserController@search')->name('searchproduct');
-
+Route::get('/searchresult','App\Http\Controllers\UserController@search')->name('searchproduct');
+Route::get('/productbycategory/{id}','App\Http\Controllers\UserController@productbycategory')->name('productbycategory');
+Route::get('/signup','App\Http\Controllers\UserController@signupform')->name('signup');
+Route::post('/storecustomer','App\Http\Controllers\UserController@storecustomer')->name('storecustomer');
 
 
 
